@@ -31,13 +31,8 @@
             <div class="card-body">
               <h5 class="card-title"><?php echo htmlspecialchars($pizza['title']); ?></h5>
               <p>Created by: <?php echo htmlspecialchars($pizza['email']) ?></p>
-              <h6>Ingredients</h6>
-              <ol class="card-text">
-                <?php foreach(explode(',', $pizza['ingredients']) as $ingredient): ?>
-                  <li><?php echo htmlspecialchars($ingredient); ?></li>
-                <?php endforeach; ?>
-              </ol>
-              <a href="#" class="btn btn-primary">Read more</a>
+              <?php include('./template-parts/ingredients.php'); ?>
+              <a href="details.php?id=<?php echo $pizza['id']; ?>" class="btn btn-primary">Read more</a>
             </div>
           </div>
         </div>  
