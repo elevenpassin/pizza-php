@@ -23,30 +23,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <?php
+<?php
     include 'templates/header.php';
   ?>
 
-  <header class="container mt-5">
-    <?php if ($pizza): ?>
-      <h1><?php echo htmlspecialchars($pizza['title']) ?></h1>
-    <?php else: ?>
-      <h1>Ops!! No pizza found!!</h1>
-    <?php endif; ?>
-  </header>
+<header class="container mt-5">
+  <?php if ($pizza): ?>
+  <h1><?php echo htmlspecialchars($pizza['title']) ?></h1>
+  <?php else: ?>
+  <h1>Ops!! No pizza found!!</h1>
+  <?php endif; ?>
+</header>
 
-  <main class="container">
-    <?php if ($pizza): ?>
-      <p>Created by: <?php echo htmlspecialchars($pizza['email']) ?></p>
-      <p>Created at: <?php echo date($pizza['created_at']) ?></p>
-      <?php include('./template-parts/ingredients.php'); ?>
-    <?php else: ?>
-      <p>No problem! Create your own pizza down here...!</p>
-      <a href="add.php" class="btn btn-primary">Create my own pizza</a>
-    <?php endif; ?>
-  </main>
+<main class="container">
+  <?php if ($pizza): ?>
+  <p>Created by: <?php echo htmlspecialchars($pizza['email']) ?></p>
+  <p>Created at: <?php echo date($pizza['created_at']) ?></p>
+  <?php include('./template-parts/ingredients.php'); ?>
+  <?php else: ?>
+  <p>No problem! Create your own pizza down here...!</p>
+  <a href="add.php" class="btn btn-primary">Create my own pizza</a>
+  <?php endif; ?>
+</main>
 
-  <?php
+<?php
     include 'templates/footer.php';
   ?>
 
