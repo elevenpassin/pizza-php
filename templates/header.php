@@ -1,3 +1,15 @@
+<?php
+
+  session_start();
+
+  if ($_SERVER['QUERY_STRING'] == 'noname') {
+    unset($_SESSION['name']);
+  }
+    
+  $name = $_SESSION['name'] ?? 'Guest';
+  $gender = $_COOKIE['gender'] ?? 'Unknown';
+?>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +53,9 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
         </ul>
+        <?php if(isset($name)): ?>
+        <p class="mr-3">Hello <?php echo htmlspecialchars($name); ?> - <?php echo htmlspecialchars($gender); ?></p>
+        <?php endif; ?>
         <a class="btn btn-success" href="./add.php">Add Pizza</a>
       </div>
     </div>
